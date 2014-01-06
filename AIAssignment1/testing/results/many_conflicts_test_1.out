@@ -1,0 +1,16 @@
+stupqr --> pqrstu --- 3 4
+pqrstu --> stumno --- 3 9
+stumno --> nopcde --- 2 10
+nopcde --> cdefg --- 3 13
+cdefg --> defgabc --- 4 16
+defgabc --> abcde --- 3 11
+abcde --> bcdeg --- 4 15
+bcdeg --> stuabc --- 0
+stuabc --> abcdlmno --- 3 11
+abcdlmno --> mnopqr --- 3 12
+mnopqr --> studef --- 0
+studef --> defgmno --- 3 15
+defgmno --> fgmnop --- 5 9
+fgmnop --> bcdef --- 0
+stupqrstumnopcdefgabcdegstuabcdlmnopqrstudefgmnopbcdef
+Maximal number = 124

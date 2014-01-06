@@ -1,0 +1,11 @@
+ending --> inglip --- 3 0
+inglip --> lipase --- 3 0
+lipase --> certainly --- 0
+certainly --> lyric --- 2 0
+lyric --> iceman --- 2 1
+iceman --> necromancer --- 1 0
+necromancer --> reenter --- 1 4
+reenter --> terminator --- 3 0
+terminator --> haha --- 0
+endinglipasecertainlyricemanecromancereenterminatorhaha
+Maximal number = 37

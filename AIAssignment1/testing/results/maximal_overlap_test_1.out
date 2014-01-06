@@ -1,0 +1,21 @@
+abcde --> bcdef --- 4 3
+bcdef --> cdefg --- 4 4
+cdefg --> fghij --- 2 2
+fghij --> ghijk --- 4 7
+ghijk --> hijkl --- 4 9
+hijkl --> ijklm --- 4 11
+ijklm --> jklmn --- 4 12
+jklmn --> klmno --- 4 12
+klmno --> lmnop --- 4 12
+lmnop --> mnopq --- 4 12
+mnopq --> nopqr --- 4 12
+nopqr --> opqrs --- 4 12
+opqrs --> pqrst --- 4 12
+pqrst --> qrstu --- 4 12
+qrstu --> rstuv --- 4 12
+rstuv --> stuvw --- 4 12
+stuvw --> tuvwx --- 4 11
+tuvwx --> uvwxy --- 4 9
+uvwxy --> vwxyz --- 4 6
+abcdefghijklmnopqrstuvwxyz
+Maximal number = 292

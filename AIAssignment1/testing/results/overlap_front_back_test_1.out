@@ -1,0 +1,4 @@
+nest --> nestea --- 4 1
+nestea --> tea --- 3 1
+nestea
+Maximal number = 25

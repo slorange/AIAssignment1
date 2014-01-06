@@ -1,0 +1,69 @@
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{verbatim}
+% \usepackage[hmargin=1in,vmargin=1in]{geometry}
+% tabstop: 1.27cm; margins (top/bottom): 2.54cm, (right/left): 3.17cm
+\usepackage[hmargin=0.75in,vmargin=1in]{geometry}
+\usepackage{natbib}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{algorithm2e}
+\usepackage[pdftex,bookmarks,breaklinks,pdfborder={0 0 0}]{hyperref}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\def\sectionautorefname{Section}
+
+%listing style
+\lstset{tabsize=3,showstringspaces=false, breaklines=true,basicstyle=\ttfamily,frame=single,numbers=left}
+
+%natbib bibliography style
+\bibpunct{(}{)}{;}{a}{,}{,}
+\bibliographystyle{apalike}
+\renewcommand{\cite}{\citep}
+
+\doublespacing
+\renewcommand{\bibsection}{\ }
+
+\setlength{\parindent}{0.0in}
+\pagestyle{empty} % turn off page numbering
+
+%abbreviations
+\newcommand{\newftocommand}[3]{\expandafter\def\csname#1\endcsname{{\expandafter}\expandafter\ifx\csname fto#1fto\endcsname\undefined#2\expandafter\def\csname fto#1fto\endcsname{}\else#3\fi}}
+
+\newcommand{\question}[1]{\section{#1}}
+\newcommand{\subquestion}[1]{\subsection{#1}}
+\newcommand{\subsubquestion}[1]{\subsubsection{#1}}
+
+\newcommand{\thisclass}{CS486}
+
+\newcommand{\defaulttitlepage}[3]
+{
+\title{\thisclass \ Assignment #1}
+\date{#2}
+\author{#3}
+\maketitle
+\thispagestyle{empty}
+\begin{center}
+    Total pages: \pageref{LastPage} (not including title page or table of contents)
+\end{center}
+\newpage
+\setcounter{page}{1}
+}
+
+\newcommand{\defaultheaderfooter}[3]
+{
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[l]{\noindent
+\textbf{Name:} #3 
+}
+\fancyhead[r]{\noindent
+\textbf{\thisclass \ Assignment #1} \\ \ \\
+#2
+}
+\fancyfoot[c]{
+\rule{\linewidth}{0.2mm} \\
+Page \thepage \ of \pageref{LastPage}}
+}

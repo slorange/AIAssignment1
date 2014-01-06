@@ -1,0 +1,40 @@
+yes --> essential --- 2 2
+essential --> alas --- 2 2
+alas --> lasting --- 3 1
+lasting --> stinger --- 5 3
+stinger --> gerund --- 3 3
+gerund --> underdevelop --- 3 1
+underdevelop --> eloped --- 4 1
+eloped --> pediatric --- 3 1
+pediatric --> tricky --- 4 4
+tricky --> yet --- 1 1
+yet --> eternal --- 2 1
+eternal --> ally --- 2 2
+ally --> incredible --- 0
+incredible --> blemish --- 3 3
+blemish --> mishapen --- 4 1
+mishapen --> penultimate --- 3 1
+penultimate --> tense --- 2 2
+tense --> seem --- 2 2
+seem --> emerge --- 2 1
+emerge --> merger --- 5 2
+merger --> geriatric --- 3 3
+geriatric --> trice --- 4 4
+trice --> icer --- 3 2
+icer --> certain --- 3 2
+certain --> invent --- 2 2
+invent --> terrible --- 1 3
+terrible --> blend --- 3 3
+blend --> lending --- 4 2
+lending --> ingrate --- 3 3
+ingrate --> rates --- 4 2
+rates --> tessilate --- 3 2
+tessilate --> later --- 4 2
+later --> terrestrial --- 3 3
+terrestrial --> trials --- 5 2
+trials --> sudden --- 1 1
+sudden --> denude --- 3 3
+denude --> dense --- 2 3
+dense --> sea --- 2 2
+yessentialastingerunderdevelopediatrickyeternallyincrediblemishapenultimatenseemergeriatricertainventerriblendingratessilaterrestrialsuddenudensea
+Maximal number = 356

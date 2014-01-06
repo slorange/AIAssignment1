@@ -1,0 +1,211 @@
+\documentclass{article}
+\usepackage{writeup}
+
+\newcommand{\SRCDIR}{../heuristic2}
+\newcommand{\TSTDIR}{..}
+
+\newcommand{\filname}{Filbert Ma}
+\newcommand{\fillogin}{fmma}
+\newcommand{\filid}{20259693}
+\newcommand{\sylname}{Sylvain Loranger}
+\newcommand{\syllogin}{slorange}
+\newcommand{\sylid}{20281054}
+\newcommand{\glennname}{Glenn Hartmann}
+\newcommand{\glennlogin}{gjhartma}
+\newcommand{\glennid}{20266893}
+
+\newcommand{\assignmentnumber}{1}
+\newcommand{\duedate}{May 26, 2011}
+
+\newcommand{\geneticwikiurl}{\url{https://secure.wikimedia.org/wikipedia/en/wiki/Genetic_algorithm}}
+
+\begin{document}
+\defaulttitlepage{\assignmentnumber}{\duedate}{\glennname, \sylname, \filname \\ \glennlogin, \syllogin, \fillogin \\ \glennid, \sylid, \filid}
+\tableofcontents
+\lstlistoflistings
+\newpage
+\setcounter{page}{1}
+\defaultheaderfooter{\assignmentnumber}{\duedate}{\glennname, \sylname, \filname}
+
+\ \\[-4em]
+\question{Source Code}
+We implemented 4 different algorithms to experiment broadly with a few different approaches to solving this problem. The first way was the given greedy algorithm from the assignment specifications. The next algorithm we used, which was our first to be outside the given algorithm, was a Genetic Algorithm (the most creative, but least successful). Next was a ``Total Cost'' heuristic approach, and last was an ``Opportunity Cost'' heuristic. Descriptions of all 4 algorithms can be found below in \autoref{sec:descriptions} (\hyperref[sec:descriptions]{page \pageref{sec:descriptions}}).
+
+\singlespace
+\lstset{language=java}
+\lstinputlisting[caption=Graph.java,label=lst:graph_java]{\SRCDIR/Graph.java}
+\lstinputlisting[caption=Genetic.java,label=lst:genetic_java]{\SRCDIR/Genetic.java}
+\lstinputlisting[caption=Generation.java,label=lst:generation_java]{\SRCDIR/Generation.java}
+\lstinputlisting[caption=Edge.java,label=lst:edge_java]{\SRCDIR/Edge.java}
+\lstinputlisting[caption=Node.java,label=lst:node_java]{\SRCDIR/Node.java}
+\lstinputlisting[caption=Wordsnake.java,label=lst:wordsnake_java]{\SRCDIR/Wordsnake.java}
+
+\doublespace
+\question{words.txt Testcase Results}
+\
+\begin{table}[h!]
+    \caption{Results for the words.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 355 & incrediblemishapenultimaterriblendingratessilaterrestrialsuddenud- enseayessentialastingerunderdevelopediatrickyeternallytenseemergeriatricertainvent \\ \hline
+        Genetic Algorithm & 339 & emergeriatrickysuddenudenselastingerunderdevelopediatricertaincr- ediblendingratessilaterrestrialseeminventerriblemshapenultimatenseayessentiallyeternalas \\ \hline
+        Total Cost Heuristic & 332 & ratessilaterriblendingrateincrediblemishapenultimateternalast- ingerunderdevelopediatrickyetenseemergeriatricertainventerrestrialsuddenudenseallyessential \\ \hline
+        Opportunity Cost Heuristic & 356 & yessentialastingerunderdevelopediatrickyeternallyincred- iblemishapenultimatenseemergeriatricertainventerriblendingratessilaterrestrialsuddenudensea \\ \hline
+    \end{tabular}
+    \label{tab:words_txt_results}
+\end{table}
+
+\question{Additional Testcases and Results}
+Our first testcase tests our algorithms on a set of words with many conflicts to ensure that our techniques and heuristics can find a good answer even with local competition.
+
+\singlespace
+\lstset{language=}
+\lstinputlisting[caption=many\_conflicts\_test.txt,label=lst:many_conflicts_test_txt]{\TSTDIR/many_conflicts_test.txt}
+\begin{table}[h!]
+    \caption{Results for the many\_conflicts\_test.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 138 & bcdefgmnopqrstupqrstumnopcdestudefgabcdegstuabcdlmno \\ \hline
+        Genetic Algorithm & 138 & studefgabcdegbcdefgmnopqrstupqestuabcdlmnostumnopcde \\ \hline
+        Total Cost Heuristic & 124 & stupqrstumnopcdefgabcdegstuabcdlmnopqrstudefgmnopbcdef \\ \hline
+        Opportunity Cost Heuristic & 138 & stupqrstumnopcdebcdefgmnopqrstuabcdlmnostudefgabcdeg \\ \hline
+    \end{tabular}
+    \label{tab:many_conflicts_test_results}
+\end{table}
+
+\doublespace
+The next testcase verifies that our program correctly handles input with very large overlap between sets of words.
+\singlespace
+
+\lstinputlisting[caption=maximal\_overlap\_test.txt,label=lst:maximal_overlap_test_txt]{\TSTDIR/maximal_overlap_test.txt}
+\begin{table}[h!]
+    \caption{Results for the maximal\_overlap\_test.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 292 & abcdefghijklmnopqrstuvwxyz \\ \hline
+        Genetic Algorithm & 292 & abcdefghijklmnopqrstuvwxyz \\ \hline
+        Total Cost Heuristic & 292 & abcdefghijklmnopqrstuvwxyz \\ \hline
+        Opportunity Cost Heuristic & 292 & abcdefghijklmnopqrstuvwxyz \\ \hline
+    \end{tabular}
+    \label{tab:maximal_overlap_test_results}
+\end{table}
+
+\doublespace
+overlap\_front\_back is just a simple test to make sure the code correctly handles combining from the front and to the back.
+\singlespace
+
+\lstinputlisting[caption=overlap\_front\_back\_test.txt,label=lst:internal_word_test_txt]{\TSTDIR/overlap_front_back_test.txt}
+\begin{table}[h!]
+    \caption{Results for the overlap\_front\_back\_test.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 25 & nestea \\ \hline
+        Genetic Algorithm & 25 & nestea \\ \hline
+        Total Cost Heuristic & 25 & nestea \\ \hline
+        Opportunity Cost Heuristic & 25 & nestea \\ \hline
+    \end{tabular}
+    \label{tab:internal_word_test_results}
+\end{table}
+
+\doublespace
+The no\_overlap testcase makes sure that our program correctly returns a score of \( 0 \) when there are no overlapping words.
+\singlespace
+
+\lstinputlisting[caption=no\_overlap\_test.txt,label=lst:no_overlap_test_txt]{\TSTDIR/no_overlap_test.txt}
+\begin{table}[h!]
+    \caption{Results for the no\_overlap\_test.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 0 & zazannabobcrytecdrizzledeffefourfganghanthioijouliajkraklolmom- nounontopopquaqrawrsagestutuouvorteavwowxanxyoyoy \\ \hline
+        Genetic Algorithm & 0 & bobfourfzazyoyoyjouliajpopontonounmomkrakannacrytecvorteavxanx- drizzledouotuteffeganghanthioiquaqrawrsageslolwow \\ \hline
+        Total Cost Heuristic & 0 & zazannabobcrytecdrizzledeffefourfganghanthioijouliajkraklolmom- nounontopopquaqrawrsagestutuouvorteavwowxanxyoyoy \\ \hline
+        Opportunity Cost Heuristic & 0 & zazannabobcrytecdrizzledeffefourfganghanthioijouliajkraklolmom- nounontopopquaqrawrsagestutuouvorteavwowxanxyoyoy \\ \hline
+    \end{tabular}
+    \label{tab:no_overlap_test_results}
+\end{table}
+
+\doublespace
+The overlap\_itself testcase makes sure that words that begin and end the same do not mistakenly try to gain score by overlapping themselves.
+\singlespace
+
+\lstinputlisting[caption=overlap\_itself\_test.txt,label=lst:overlap_itself_test_txt]{\TSTDIR/overlap_itself_test.txt}
+\begin{table}[h!]
+    \caption{Results for the overlap\_itself\_test.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 44 & necromancertainlyricemanendinglipasereenterminatorhaha \\ \hline
+        Genetic Algorithm & 44 & endinglipasereenterminatornecromancertainlyricemanhaha \\ \hline
+        Total Cost Heuristic & 37 & endinglipasecertainlyicemanecromancereenterminatorhaha \\ \hline
+        Opportunity Cost Heuristic & 41 & endinglipasereenterminatoricemanecromancertainlyrichaha \\ \hline
+    \end{tabular}
+    \label{tab:overlap_itself_test_results}
+\end{table}
+
+\doublespace
+``same\_words'' tests the behaviour of multiple copies of a word given in the input word list.
+\singlespace
+
+\lstinputlisting[caption=same\_words\_test.txt,label=lst:same_words_test_txt]{\TSTDIR/same_words_test.txt}
+\begin{table}[h!]
+    \caption{Results for the same\_words\_test.txt testcase}
+    \begin{tabular}{|l|l|p{30em}|}
+        \hline
+        & Best Score & Best Wordsnake \\ \hline
+        Greedy Algorithm & 288 & insert \\ \hline
+        Genetic Algorithm & 288 & insert \\ \hline
+        Total Cost Heuristic & 288 & insert \\ \hline
+        Opportunity Cost Heuristic & 288 & insert \\ \hline
+    \end{tabular}
+    \label{tab:same_words_test_results}
+\end{table}
+
+\doublespace
+
+\question{Algorithm Descriptions}
+\label{sec:descriptions}
+\subquestion{Greedy}
+This is the exact simplistic algorithm given to us on the assignment description. This was our starting point for the other 3 algorithms below, and we included it only as a reference to benchmark our other algorithms' performance.
+
+\subquestion{Genetic}
+Our original idea was to make use of a Genetic Algorithm (see \geneticwikiurl). What this means is that we devised a way to encode each ``solution'' uniformly, created a ``generation'' of randomly generated solutions (``individuals''), then tested the ``fitness'' of each individual. The most fit individuals have a better chance to mate (by combining their representation of a solution with another high-scoring individual of the same generation). The newly created individuals from mating form the second generation. The idea is that, given large enough population diversity, and enough generations, that the individuals will tend more and more toward better solutions. This approach is much less time-consuming than a brute-force approach, but more time-consuming than a simple heuristic. We believed that this could achieve better end results than a heuristic might, so we decided to attempt this solution despite the greater runtime requirements. \\
+
+In our specific implementation, we decided to encode an ``individual'' as a starting node, followed by \( n - 1 \) edges to make a path through the original graph. \\
+
+In practise, our genetic algorithm often got stuck on local maxima and stopped progressing after a certain point. Although there is some degree of random chance in this algorithm, we could not seem to get answers as high as heuristic approaches no matter how many times we ran our algorithm. The traditional solution to the problem of local maxima in a genetic algorithm is to introduce ``genetic mutation''. This is the process of randomizing a certain solution with very low probability to ensure greater diversity within a generation, and thereby have a greater chance of getting out of a local maximum. Although this did solve our problem of getting stuck in local maxima, it seemed to severely impede overall progress, so we were still unable to get good solutions with a reasonable number of individuals and generations. \\
+
+We believe that this approach could have worked if we had continued to experiment with different probabilities for mating and mutation, however overall it seems to be less efficient at runtime than a simpler heuristic anyway.
+
+\subquestion{Total Cost}
+Because our genetic algorithm did not produce results as favourable as we had hoped, we also tried some more traditional heuristic approaches. The first of which is a fairly simple approach. At every node \( x \), we picked the next node \( y_{i} \) to be the one which maximizes the function \( f \left( x, y_{i} \right) = v \left( x, y_{i} \right) - g \left( x, y_{i} \right) \) where \( x \) is the current node, \( y_{i} \) is the potential next node, \( v \left( x, y_{i} \right) \) is the value of combining node \( x \) with node \( y_{i} \) (ie, the overlap between nodes \( x \) and \( y_{i} \)), and \( g \left( x, y_{i} \right) \) is the sum of all values forgone to merge node \( x \) with node \( y_{i} \). In other words, if node \( x \) has \( n \) outward edges (pointing to nodes \( y_{0}, y_{1}, \ldots, y_{n - 1} \)),
+
+\[ g \left( x, y_{i} \right) = \sum_{j = 0}^{i - 1} y_{j} + \sum_{j = i + 1}^{n - 1} y_{j} \]
+
+This heuristic, despite its simplicity, ended up getting values almost as high as our Genetic Algorithm, and at much higher runtime speeds.
+
+\subquestion{Opportunity Cost}
+Our second heuristic algorithm improves on our first. Instead of subtracting the total cost of all nodes forgone, as in the Total Cost heuristic, we borrowed a concept from economics: Opportunity Cost. We decided that subtracting all the forgone nodes was an inaccurate heuristic since we really could only ever pick one at a time anyway. So instead, we calculate the Opportunity Cost --- the value of the single highest node forgone. \\
+
+Formally, for a node \( x \) with \( n \) outward edges (pointing to nodes \( y_{0}, y_{1}, \ldots, y_{n - 1} \)), we pick the \( y_{i} \) to maximize the value \( f \left( x, y_{i} \right) = v \left( x, y_{i} \right) - g \left( x, y_{i} \right) \), where \( v \left( x, y_{i} \right) \) is the value of the overlap between nodes \( x \) and \( y_{i} \), and
+
+\[ g \left( x, y_{i} \right) = \max \left( \max_{j = 0}^{i - 1} \left( y_{j} \right), \max_{j = i + 1}^{n - 1} \left( y_{j} \right) \right) \]
+
+As expected, this heuristic did prove to outperform the simpler Total Cost approach above.
+
+\question{Acknowledgements}
+\begin{itemize}
+    \item We based our main graph algorithm on the one included with the assignment handouts. We added heuristics onto this and used it as a starting point for our genetic algorithm.
+    \item We researched techniques and concepts relating to Genetic Algorithms (but did not take any specific code) from the following sources:
+        \begin{itemize}
+            \item \geneticwikiurl
+            \item \url{http://www.rennard.org/alife/english/gavintrgb.html}
+        \end{itemize}
+    \item We received no other help on this assignment
+\end{itemize}
+
+\end{document}

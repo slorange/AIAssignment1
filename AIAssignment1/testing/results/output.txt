@@ -1,0 +1,78 @@
+test1.txt
+--------------------------
+---- MAXIMAL OUTPUT ------
+--------------------------
+Maximal number = 339
+emerge --> merger --- 5
+merger --> geriatric --- 3
+geriatric --> tricky --- 4
+tricky --> sudden --- 0
+sudden --> denude --- 3
+denude --> dense --- 2
+dense --> lasting --- 0
+lasting --> stinger --- 5
+stinger --> gerund --- 3
+gerund --> underdevelop --- 3
+underdevelop --> eloped --- 4
+eloped --> pediatric --- 3
+pediatric --> trice --- 4
+trice --> icer --- 3
+icer --> certain --- 3
+certain --> incredible --- 2
+incredible --> blend --- 3
+blend --> lending --- 4
+lending --> ingrate --- 3
+ingrate --> rates --- 4
+rates --> tessilate --- 3
+tessilate --> later --- 4
+later --> terrestrial --- 3
+terrestrial --> trials --- 5
+trials --> seem --- 1
+seem --> invent --- 0
+invent --> terrible --- 1
+terrible --> blemish --- 3
+blemish --> mishapen --- 4
+mishapen --> penultimate --- 3
+penultimate --> tense --- 2
+tense --> sea --- 2
+sea --> yes --- 0
+yes --> essential --- 2
+essential --> ally --- 2
+ally --> yet --- 1
+yet --> eternal --- 2
+eternal --> alas --- 2
+
+emergeriatrickysuddenudenselastingerunderdevelopediatricertaincrediblendingratessilaterrestrialseeminventerriblemshapenultimatenseayessentiallyeternalas
+
+overlap_itself_test.txt
+--------------------------
+------ FINAL OUTPUT ------
+--------------------------
+Maximal number = 44
+ending --> inglip --- 3
+inglip --> lipase --- 3
+lipase --> reenter --- 0
+reenter --> terminator --- 3
+terminator --> necromancer --- 0
+necromancer --> certainly --- 3
+certainly --> lyric --- 2
+lyric --> iceman --- 2
+iceman --> haha --- 0
+
+endinglipasereenterminatornecromancertainlyricemanhaha
+
+same_words_test.txt
+--------------------------
+------ FINAL OUTPUT ------
+--------------------------
+Maximal number = 288
+insert --> insert --- 6
+insert --> insert --- 6
+insert --> insert --- 6
+insert --> insert --- 6
+insert --> insert --- 6
+insert --> insert --- 6
+insert --> insert --- 6
+insert --> insert --- 6
+
+insert

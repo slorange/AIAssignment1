@@ -1,0 +1,56 @@
+overlap_front_back:
+--------------------------
+------ FINAL OUTPUT ------
+--------------------------
+Maximal number = 25
+nestea --> tea --- 3
+nest --> nestea --- 4
+nestea
+
+many_conflicts:
+--------------------------
+------ FINAL OUTPUT ------
+--------------------------
+Maximal number = 138
+studef --> defgabc --- 3
+defgabc --> abcde --- 3
+abcde --> bcdeg --- 4
+bcdeg --> bcdef --- 0
+bcdef --> cdefg --- 4
+cdefg --> defgmno --- 4
+defgmno --> fgmnop --- 5
+fgmnop --> mnopqr --- 4
+mnopqr --> pqrstu --- 3
+pqrstu --> stupqr --- 3
+stupqr --> stuabc --- 0
+stuabc --> abcdlmno --- 3
+abcdlmno --> stumno --- 0
+stumno --> nopcde --- 2
+studefgabcdegbcdefgmnopqrstupqestuabcdlmnostumnopcde
+
+maximal_overlap:
+--------------------------
+------ FINAL OUTPUT ------
+--------------------------
+Maximal number = 292
+abcde --> bcdef --- 4
+bcdef --> cdefg --- 4
+cdefg --> fghij --- 2
+fghij --> ghijk --- 4
+ghijk --> hijkl --- 4
+hijkl --> ijklm --- 4
+ijklm --> jklmn --- 4
+jklmn --> klmno --- 4
+klmno --> lmnop --- 4
+lmnop --> mnopq --- 4
+mnopq --> nopqr --- 4
+nopqr --> opqrs --- 4
+opqrs --> pqrst --- 4
+pqrst --> qrstu --- 4
+qrstu --> rstuv --- 4
+rstuv --> stuvw --- 4
+stuvw --> tuvwx --- 4
+tuvwx --> uvwxy --- 4
+uvwxy --> vwxyz --- 4
+abcdefghijklmnopqrstuvwxyz
+

@@ -1,0 +1,40 @@
+rates --> tessilate --- 3 12
+tessilate --> later --- 4 13
+later --> terrible --- 3 12
+terrible --> blend --- 3 12
+blend --> lending --- 4 9
+lending --> ingrate --- 3 7
+ingrate --> incredible --- 0
+incredible --> blemish --- 3 12
+blemish --> mishapen --- 4 1
+mishapen --> penultimate --- 3 1
+penultimate --> eternal --- 1 22
+eternal --> alas --- 2 10
+alas --> lasting --- 3 7
+lasting --> stinger --- 5 9
+stinger --> gerund --- 3 11
+gerund --> underdevelop --- 3 2
+underdevelop --> eloped --- 4 12
+eloped --> pediatric --- 3 3
+pediatric --> tricky --- 4 13
+tricky --> yet --- 1 2
+yet --> tense --- 1 15
+tense --> seem --- 2 12
+seem --> emerge --- 2 11
+emerge --> merger --- 5 8
+merger --> geriatric --- 3 11
+geriatric --> trice --- 4 13
+trice --> icer --- 3 10
+icer --> certain --- 3 5
+certain --> invent --- 2 4
+invent --> terrestrial --- 1 16
+terrestrial --> trials --- 5 9
+trials --> sudden --- 1 6
+sudden --> denude --- 3 6
+denude --> dense --- 2 10
+dense --> sea --- 2 12
+sea --> ally --- 1 7
+ally --> yes --- 1 2
+yes --> essential --- 2 16
+ratessilaterriblendingrateincrediblemishapenultimateternalastingerunderdevelopediatrickyetenseemergeriatricertainventerrestrialsuddenudenseallyessential
+Maximal number = 332

@@ -1,0 +1,15 @@
+abcde
+bcdef
+bcdeg
+cdefg
+defgabc
+defgmno
+mnopqr
+pqrstu
+fgmnop
+abcdlmno
+stuabc
+studef
+stumno
+stupqr
+nopcde

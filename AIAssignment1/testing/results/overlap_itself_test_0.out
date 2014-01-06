@@ -1,0 +1,11 @@
+necromancer --> certainly --- 3
+certainly --> lyric --- 2
+lyric --> iceman --- 2
+iceman --> ending --- 0
+ending --> inglip --- 3
+inglip --> lipase --- 3
+lipase --> reenter --- 0
+reenter --> terminator --- 3
+terminator --> haha --- 0
+necromancertainlyricemanendinglipasereenterminatorhaha
+Maximal number = 44
